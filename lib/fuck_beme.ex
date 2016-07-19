@@ -38,8 +38,8 @@ defmodule FuckBeme do
     :dets.close(:replied_to)
   end
 
-  def search_and_reply(num_tweets \\ 50) do
-    ExTwitter.search("beme", [count: num_tweets]) 
+  def search_and_reply(num_tweets \\ 100) do
+    ExTwitter.search("beme", count: num_tweets) 
       |> Enum.each(&reply/1)
   end
 end
