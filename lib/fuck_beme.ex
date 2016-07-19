@@ -20,22 +20,26 @@ defmodule FuckBeme do
   end
 
   defp insert_id(id) do
-    :ets.insert(:replied_to, {id, self})
+    :dets.insert(:replied_to, {id, self})
   end
 
   defp replied_to?(id) do
-    case :ets.lookup(:replied_to, id) do
+    case :dets.lookup(:replied_to, id) do
       [{_, _}] -> true
       [] -> false
     end
   end
 
   def init() do
-    :ets.new(:replied_to, [:named_table])
+    :dets.open_file(:replied_to, [type: :set])
   end
 
-  def search_and_reply() do
-    ExTwitter.search("beme", [count: 10]) 
+  def close() do
+    :dets.close(:replied_to)
+  end
+
+  def search_and_reply(num_tweets \\ 50) do
+    ExTwitter.search("beme", [count: num_tweets]) 
       |> Enum.each(&reply/1)
   end
 end
