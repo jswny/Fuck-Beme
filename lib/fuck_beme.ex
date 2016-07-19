@@ -1,6 +1,6 @@
 defmodule FuckBeme do
   defp reply(%{:id => tweet_id, :user => %{:screen_name => username}, :text => tweet_text}) do
-    if (String.downcase(username) |> String.contains?("beme"))  || check_tweet_text(tweet_text) do
+    if (String.downcase(username) |> String.contains?("beme"))  || !tweet_contains_beme(tweet_text) do
       IO.puts "Skipping reply to " <> username
     else
       if replied_to?(tweet_id) do
@@ -13,10 +13,19 @@ defmodule FuckBeme do
     end
   end
 
-  defp check_tweet_text(tweet_text) do
+  def tweet_contains_beme(tweet_text) do
     tweet_text
       |> String.split(" ", trim: true)
-      |> Enum.any?(&String.starts_with?(&1, "@"))
+      |> Enum.map(&map_tweet_text/1)
+      |> Enum.any?(&String.downcase(&1) |> String.contains?("beme"))
+  end
+
+  def map_tweet_text(chunk) do
+    if String.starts_with?(chunk, "@") do
+      ""
+    else
+      chunk
+    end
   end
 
   defp insert_id(id) do
