@@ -13,7 +13,7 @@ Beme is a terrible app which is essentially a shitty rip off of Snapchat. It doe
 - ExTwitter 0.7.1
 
 ## Setup
-1. Clone this repo: `git clone https://github.com/jswny/fuck-beme`
+1. Clone this repo: `git clone https://github.com/jswny/Fuck-Beme.git`
 2. Fill in `config/config.exs` with your Twitter API information which can be obtained from http://apps.twitter.com/
 3. In the directory of this repository, start **mix** in IEx (the Elixir Repl): `iex -S mix`
 4. Initialize the local DETS store: `FuckBeme.init()`
