@@ -30,8 +30,8 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :extwitter, :oauth, [
-   consumer_key: "6zN3O0PGQoPmTrfkD16c1oQ0L",
-   consumer_secret: "WNDniFMHf5nbqDp1kJVALY97jrqebt7DDWHOzSQ48B2MWkKhMT",
-   access_token: "755234636666642434-ZbMwfNwvDCOu6g3YzpIHpEwi55Yyxfu",
-   access_token_secret: "tp3aP32heVk6KH7geY0r08qQ7iunI5JqL2mUUj6f41ppn"
+   consumer_key: "",
+   consumer_secret: "",
+   access_token: "",
+   access_token_secret: ""
 ]
