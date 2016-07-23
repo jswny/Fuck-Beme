@@ -1,4 +1,6 @@
 defmodule FuckBeme do
+
+  # Reply to a specified tweet, making sure to add "@" and the username into the tweet text
   defp reply(username, tweet_id) do
     ExTwitter.update("@" <> username <> " Fuck Beme", in_reply_to_status_id: tweet_id)
     insert_id(tweet_id)
