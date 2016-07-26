@@ -18,10 +18,12 @@ Beme is a terrible app which is essentially a shitty rip off of Snapchat. It doe
 ## Setup
 1. Clone this repo: `git clone https://github.com/jswny/Fuck-Beme.git`
 2. Fill in `config/config.exs` with your Twitter API information which can be obtained from http://apps.twitter.com/
-3. In the directory of this repository, start **mix** in IEx (the Elixir Repl): `iex -S mix`
-4. Initialize the local DETS store: `FuckBeme.init()`
+3. Change the string on line 11 of `lib/fuckbeme.ex` to the username of the account that you will run the bot on (case sensitive)
+  - Example: `when username != "FuckBeme"` => `when username != "MyAccount"`
+4. In the directory of this repository, start **mix** in IEx (the Elixir Repl): `iex -S mix`
+5. Initialize the local DETS store: `FuckBeme.init()`
   - This will create a binary file named `replied_to` which contains the DETS store
-5. Run `FuckBeme.search_and_reply()` and let the tweets fly!
+6. Run `FuckBeme.search_and_reply()` and let the tweets fly!
   - You may optionally supply an argument for this function like `FuckBeme.search_and_reply(10)` if you want to search 10 tweets only
 
 ## Warning
