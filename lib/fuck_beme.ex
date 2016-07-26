@@ -8,7 +8,7 @@ defmodule FuckBeme do
 
   # Pattern match on the ID, username, tweet contents, and retweeted status
   # Any tweets that are not retweets will match here 
-  defp process_tweet(%{:id => tweet_id, :user => %{:screen_name => username}, :text => tweet_text, :retweeted_status => nil}) do
+  defp process_tweet(%{:id => tweet_id, :user => %{:screen_name => username}, :text => tweet_text, :retweeted_status => nil}) when username != "FuckBeme" do
 
     # Do not reply to tweets which do not contain "beme" in the tweet text minus usernames
     if (!tweet_contains_beme(tweet_text)) do
