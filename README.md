@@ -1,6 +1,9 @@
 # FuckBeme
 Beme is a terrible app which is essentially a shitty rip off of Snapchat. It does everything that Snapchat does, but worse. So, I made this Twitter bot to let the world know how much I hate Beme, and it's self-absorbed creator, Casey Neistat. Here's to you, Casey.
 
+## Screenshots
+![Demo](http://i.imgur.com/9P4CvZW.gif "Demo")
+
 ## Components
 - `DETS` for persistent storage
 - `erlang-oauth` for OAuth with the Twitter API
